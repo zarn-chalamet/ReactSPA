@@ -35,6 +35,10 @@ function App() {
     setCount((prevState) => prevState + 1);
   };
 
+  let deletePost = (id) => {
+    setPosts((previousState) => previousState.filter((post) => post.id !== id));
+  };
+
   return (
     <div className="app">
       <h1>Hello {name}</h1>
@@ -48,7 +52,10 @@ function App() {
       <h2>Post</h2>
       <ul>
         {posts.map((post) => (
-          <li>{post.title}</li>
+          <li>
+            {post.title}
+            <button onClick={() => deletePost(post.id)}>delete</button>
+          </li>
         ))}
       </ul>
 
