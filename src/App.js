@@ -26,6 +26,15 @@ function App() {
     console.log(name);
   };
 
+  let [count, setCount] = useState(0);
+
+  let increment = () => {
+    setCount((prevState) => prevState + 1);
+    setCount((prevState) => prevState + 1);
+    setCount((prevState) => prevState + 1);
+    setCount((prevState) => prevState + 1);
+  };
+
   return (
     <div className="app">
       <h1>Hello {name}</h1>
@@ -42,6 +51,9 @@ function App() {
           <li>{post.title}</li>
         ))}
       </ul>
+
+      <h2>Count : {count} </h2>
+      <button onClick={increment}>Increment</button>
     </div>
   );
 }
