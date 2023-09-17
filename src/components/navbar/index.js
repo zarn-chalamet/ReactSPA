@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function Navbar({ setShowModel }) {
   return (
-    <nav>
+    <nav className="navbar">
       <div className="container">
         <h1>Logo</h1>
         <ul>

@@ -26,7 +26,7 @@ function App() {
       <Navbar setShowModel={setShowModel} />
       <PostLists posts={posts} />
       {showModel && (
-        <Modal>
+        <Modal danger={false}>
           <h1>Zoom class is available now.</h1>
           <p>
             feel free to{" "}
