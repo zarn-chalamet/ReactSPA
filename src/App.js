@@ -5,6 +5,7 @@ import PostLists from "./components/postList";
 import Modal from "./components/Modal/index";
 
 function App() {
+  let [showModel, setShowModel] = useState(false);
   let [posts, setPosts] = useState([
     {
       id: 1,
@@ -22,15 +23,18 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar setShowModel={setShowModel} />
       <PostLists posts={posts} />
-      <Modal>
-        <h1>Zoom class is available now.</h1>
-        <p>
-          feel free to{" "}
-          <a href="https://www.youtube.com/watch?v=9JiW1UrLiBo">join</a> here
-        </p>
-      </Modal>
+      {showModel && (
+        <Modal>
+          <h1>Zoom class is available now.</h1>
+          <p>
+            feel free to{" "}
+            <a href="https://www.youtube.com/watch?v=9JiW1UrLiBo">join</a> here
+          </p>
+          <button onClick={() => setShowModel(false)}>close</button>
+        </Modal>
+      )}
     </>
   );
 }
